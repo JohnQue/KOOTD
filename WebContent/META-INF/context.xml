@@ -1,0 +1,17 @@
+<Context path="/LastTeamProject" docBase="www">
+<Resource
+	name="jdbc/TeamProject"
+	auth="Container"
+	type="javax.sql.DataSource"
+	driverClassName="com.mysql.jdbc.Driver"
+	loginTimeout="10"
+	validationQuery="SELECT 1 FROM DUAL"
+	maxWait="5000"
+	username="root"
+	password="kgu123"
+	testOnBorrow="true"
+	url="jdbc:mysql://localhost:3306/TeamProject?useSSL=false&amp;characterEncoding=UTF-8" />
+<ResourceLink type="javax.sql.data.DataSource" 
+	name="jdbc/TeamProject"
+	global="jdbc/TeamProject"/>
+</Context>

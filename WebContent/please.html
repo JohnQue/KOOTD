@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날씨 옷추천</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+<title>날씨 옷추천</title>
+
+</head>
+
+<body style="margin: 35px !important;">
+	<script>
+		$(document)
+				.ready(
+						function() {
+
+							console.log('...');
+							var lon = "127.02861"; //경도
+							var lat = "37.26389"; //위도 
+
+							var url2 = "http://api.openweathermap.org/data/2.5/weather?"
+									+ "&lon="
+									+ lon
+									+ "&lat="
+									+ lat
+									+ "&appid=ae145d6fc55b0fcb8f9534b9f9c41e91";
+
+							var str2;
+							var iconcode;
+							var iconur1;
+							function afterGetJson(json) {
+								str2 = json;
+
+								/* 	document.write("지역: " + str2.name);
+									document.write("<br>");
+									document.write("현재 날씨:" + "\t"
+											+ str2.weather[0].description); //날씨 정보
+									document.write("\t");
+
+									document.write("<br>"); */
+								var temp = str2.main.temp - 273.15;
+								var temp2 = Math.round(temp);
+								var maxtemp = str2.main.temp_max - 273.15;
+								var mintemp = str2.main.temp_min - 273.15;
+
+								document.write('<p style="font-family: Nanum Gothic; color: blue; font-size: 15px; text-align: center;">현재온도:  '
+												+ temp2 + '</p>');
+								//	document.write("현재 온도: " + temp2 + "   ");
+								document.write('<p style="font-family: Nanum Gothic; color: blue; font-size: 15px; text-align: center;">습도: '
+												+ str2.main.humidity + '</p>');
+								document.write('<p style="font-family: Nanum Gothic; color: blue; font-size: 15px; text-align: center;">바람 세기: '
+												+ str2.wind.speed + '</p>');
+
+								/* 	iconcode = str2.weather[0].icon;
+									iconur1 = "http://openweathermap.org/img/w/"
+											+ iconcode + ".png"; //페이지에서 아이콘 가져옴  */
+
+								if (temp2 >= -10 || temp2 < 2) { //heavy top, heavy jeans, heavy coat and scarf with gloves.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								}
+
+								else if (temp2 >= 3 || temp2 < 10) { //Jeans, top, coat and scarf.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								}
+
+								else if (temp2 >= 10 || temp2 < 15) { //Jeans and a top.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								}
+
+								else if (temp2 >= 15 || temp2 < 20) { //Jeans and a top.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								} else if (temp2 >= 20 || temp2 < 25) { //Jeans and a top.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								} else if (temp2 >= 25 || temp2 < 30) { //Jeans and a top.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								} else if (temp2 >= 30) { //hardly anything. A light t-shirt and shorts.
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter1.png' title='img' style='width:300px; height:300px;float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter2.png' title='img' style='width:300px; height:300px; float:left;' /></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter3.jpg' title='img' style='width:300px; height:300px; float:left;'/></div>");
+									$('body')
+											.append(
+													"<div><img class='myslide' src='winter4.png' title='img' style='width:300px; height:300px;  float:left;' /></div>");
+								}
+							}
+
+							$.getJSON(url2, function(json) {
+								afterGetJson(json);
+
+							}); //이거 있어야 위에 애들 먹힘 
+
+						});
+	</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,4 @@
+@charset "UTF-8";
+a.winner:visited, a.winner:hover, a.winner:link, a.winner:active{
+	color: red;
+}

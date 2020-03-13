@@ -1,0 +1,54 @@
+@charset "UTF-8";
+#select-button1{
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+  width: 100%;
+  height: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+#select-button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#select-button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.5s;
+}
+
+#select-button1:hover span {
+  padding-right: 55px;
+}
+
+#select-button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#select-button2 {
+	border-radius: 4px;
+	width: 100%;
+  height: 300px;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 40px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+   margin: 5px;
+}
+
+#select-button2:hover {opacity: 0.6}
